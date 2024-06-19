@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ydlidar_TminiPro">
+  <xacro:property name="M_PI" value="3.1415926535897931"/>
+  <xacro:macro name="ydlidar_TminiPro" params="*origin parent:=base_link name:=ydlidar">
+
+    <!-- <joint name="${name}_base_mount_joint" type="fixed">
+      <origin rpy="${roll} ${pitch} ${yaw}" xyz="${x} ${y} ${z}"/>
+      <parent link="${parent}"/>
+      <child link="${name}_base_link"/>
+    </joint> -->
+
+    <joint name="${name}_base_mount_joint" type="fixed">
+      <xacro:insert_block name="origin"/>
+      <parent link="${parent}"/>
+      <child link="${name}_base_link"/>
+    </joint>
+
+    <link name="${name}_base_link">
+      <visual>
+        <geometry>
+          <box size="0.0386 0.0386 0.02115"/>
+        </geometry>
+        <origin xyz="0 0 0.010575" rpy="0 0 0"/>
+        <material name="black">
+          <color rgba="0.0 0.0 0.0 2.0"/>
+        </material>
+      </visual>
+      <visual>
+        <geometry>
+          <cylinder length="0.01275" radius="0.0181"/>
+        </geometry>
+        <origin xyz="0 0 0.02752" rpy="0 0 0"/>
+        <material name="blue">
+          <color rgba="0.0 0.0 1.0 2.0"/>
+        </material>
+      </visual>
+      <inertial>
+        <mass value="0.045"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+      </inertial>
+    </link>
+    <joint name="${name}_base_scan_joint" type="fixed">
+      <origin xyz="0 0 0.0263" rpy="0 0 0" />
+      <parent link="${name}_base_link" />
+      <child link="${name}"/>
+    </joint>
+    <link name="${name}">
+      <inertial>
+        <mass value="0.0"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+      </inertial>
+    </link>
+  </xacro:macro>
+</robot>
