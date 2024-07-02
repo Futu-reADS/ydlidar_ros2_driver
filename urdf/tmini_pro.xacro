@@ -22,7 +22,7 @@
         </geometry>
         <origin xyz="0 0 0.010575" rpy="0 0 0"/>
         <material name="black">
-          <color rgba="0.0 0.0 0.0 2.0"/>
+          <color rgba="0.0 0.0 0.0 1.0"/>
         </material>
       </visual>
       <visual>
@@ -31,7 +31,7 @@
         </geometry>
         <origin xyz="0 0 0.02752" rpy="0 0 0"/>
         <material name="blue">
-          <color rgba="0.0 0.0 1.0 2.0"/>
+          <color rgba="0.0 0.0 1.0 1.0"/>
         </material>
       </visual>
       <inertial>
