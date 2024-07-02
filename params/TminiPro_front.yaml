@@ -1,7 +1,7 @@
-/sensing/lidar/front/ydlidar_ros2_driver_node:
+/**:
   ros__parameters:
     port: /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0
-    frame_id: front_2dlidar_frame
+    frame_id: ydlidar_front_base_link
     ignore_array: ""
     baudrate: 230400
     lidar_type: 1
